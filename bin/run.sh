@@ -154,8 +154,20 @@ if [ "x$GC_LOG_ENABLED" = "xtrue" ]; then
   KAFKA_GC_LOG_OPTS="-Xloggc:$LOG_DIR/$GC_LOG_FILE_NAME -verbose:gc -XX:+PrintGCDetails -XX:+PrintGCDateStamps -XX:+PrintGCTimeStamps "
 fi
 
-
 MAIN_CLASS="com.comparethemarket.platform.performance.Producer"
+
+echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+echo "                       JAVA=$JAVA"
+echo "            KAFKA_HEAP_OPTS=$KAFKA_HEAP_OPTS"
+echo " KAFKA_JVM_PERFORMANCE_OPTS=$KAFKA_JVM_PERFORMANCE_OPTS"
+echo "          KAFKA_GC_LOG_OPTS=$KAFKA_GC_LOG_OPTS"
+echo "             KAFKA_JMX_OPTS=$KAFKA_JMX_OPTS"
+echo "           KAFKA_LOG4J_OPTS=$KAFKA_LOG4J_OPTS"
+echo "                  CLASSPATH=$CLASSPATH"
+echo "                 KAFKA_OPTS=$KAFKA_OPTS"
+echo "                 MAIN_CLASS=$MAIN_CLASS"
+echo "                          @=$@"
+echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 
 # Launch mode
 if [ "x$DAEMON_MODE" = "xtrue" ]; then
