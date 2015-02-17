@@ -62,10 +62,10 @@ done
 #  CLASSPATH=$CLASSPATH:$file
 #done
 
-#for file in $base_dir/clients/build/libs/kafka-clients*.jar;
-#do
-#  CLASSPATH=$CLASSPATH:$file
-#done
+for file in $base_dir/clients/build/libs/kafka-clients*.jar;
+do
+  CLASSPATH=$CLASSPATH:$file
+done
 
 # classpath addition for release
 for file in $kafka_dir/libs/*.jar;
