@@ -1,0 +1,1 @@
+{"metadata": {"service": "FakeService/1.0.2", "eventName": "FakePayloadEvent", "stream": "%%STREAM_GUID%%", "submittedAt": "%%TIMESTAMP%%", "correlationId": "%%CORRELATION_GUID%%"}, "payload": {"eventfield1": "%%FIELD_ONE%%", "eventfield2": "%%FIELD_TWO%%"}}
