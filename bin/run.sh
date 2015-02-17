@@ -62,7 +62,7 @@ done
 #  CLASSPATH=$CLASSPATH:$file
 #done
 
-for file in $base_dir/clients/build/libs/kafka-clients*.jar;
+for file in $kafka_dir/clients/build/libs/kafka-clients*.jar;
 do
   CLASSPATH=$CLASSPATH:$file
 done
