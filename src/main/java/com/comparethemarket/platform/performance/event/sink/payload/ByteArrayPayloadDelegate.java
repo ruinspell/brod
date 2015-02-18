@@ -8,6 +8,10 @@ import com.comparethemarket.platform.performance.core.PayloadDelegate;
 
 public class ByteArrayPayloadDelegate extends AbstractPayloadDelegate implements PayloadDelegate {
 	
+	protected final String TOPIC_NAME = "topicName";
+	protected final String RECORD_SIZE = "recordSize";
+	
+	
 	private final String topicName; 
 	final int recordSize; 
 
@@ -17,18 +21,18 @@ public class ByteArrayPayloadDelegate extends AbstractPayloadDelegate implements
 	 */
 	public ByteArrayPayloadDelegate(final Properties props) {
 		super(props);
-		if (!this.props.containsKey("TOPIC_NAME")) {
+		if (!this.props.containsKey(TOPIC_NAME)) {
 			throw new IllegalArgumentException();
 		}
 		
-		this.topicName = this.props.getProperty("TOPIC_NAME");
+		this.topicName = this.props.getProperty(TOPIC_NAME);
 
-		if (!this.props.containsKey("RECORD_SIZE")) {
+		if (!this.props.containsKey(RECORD_SIZE)) {
 			throw new IllegalArgumentException();
 		}
 
 		this.recordSize = 
-				Integer.parseInt(this.props.getProperty("RECORD_SIZE"));
+				Integer.parseInt(this.props.getProperty(RECORD_SIZE));
 	}
 
 	/**
