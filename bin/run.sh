@@ -94,7 +94,7 @@ fi
 
 # Log4j settings
 if [ -z "$KAFKA_LOG4J_OPTS" ]; then
-  KAFKA_LOG4J_OPTS="-Dlog4j.configuration=file:$base_dir/config/tools-log4j.properties"
+  KAFKA_LOG4J_OPTS="-Dlog4j.configuration=file:$kafka_dir/config/tools-log4j.properties"
 fi
 
 KAFKA_LOG4J_OPTS="-Dkafka.logs.dir=$LOG_DIR $KAFKA_LOG4J_OPTS"
