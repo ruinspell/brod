@@ -25,14 +25,17 @@ public class ByteArrayPayloadDelegate extends AbstractPayloadDelegate implements
 			throw new IllegalArgumentException();
 		}
 		
-		this.topicName = this.props.getProperty(TOPIC_NAME);
-
+		this.topicName = (String)this.props.remove(TOPIC_NAME);
+		
 		if (!this.props.containsKey(RECORD_SIZE)) {
 			throw new IllegalArgumentException();
 		}
 
 		this.recordSize = 
-				Integer.parseInt(this.props.getProperty(RECORD_SIZE));
+				Integer.parseInt((String)this.props.remove(RECORD_SIZE));
+		
+		System.out.println("topicName: " + this.topicName);
+		System.out.println("recordSize: " + this.recordSize);
 	}
 
 	/**

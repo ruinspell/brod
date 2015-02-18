@@ -3,6 +3,7 @@
  */
 package com.comparethemarket.platform.performance.event.sink;
 
+import java.io.IOException;
 import java.util.Properties;
 
 import org.apache.kafka.clients.producer.Callback;
@@ -39,10 +40,10 @@ public class EventSinkProducer {
 	}
 	
 	public EventSinkProducer(final String scenario, final Properties props) {
-		this.props = props;
 		this.scenario = scenario;
-		this.producer = new KafkaProducer<byte[], byte[]>(this.props);
+		this.props = props;
 		this.payloadDelegate = getPayloadDelegate();
+		this.producer = new KafkaProducer<byte[], byte[]>(this.props);
 	}
 	
 	public byte[] nextPayload() {
