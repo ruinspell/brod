@@ -1,7 +1,9 @@
-package com.comparethemarket.platform.performance.core;
+package ctm.platform.performance.template;
 
 import java.util.Map;
 import java.util.regex.Pattern;
+
+import ctm.platform.performance.EventTemplate;
 
 public abstract class BaseEventTemplate implements EventTemplate {
 

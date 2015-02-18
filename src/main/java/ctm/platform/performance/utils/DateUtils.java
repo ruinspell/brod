@@ -1,4 +1,4 @@
-package com.comparethemarket.platform.performance.utils;
+package ctm.platform.performance.utils;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;

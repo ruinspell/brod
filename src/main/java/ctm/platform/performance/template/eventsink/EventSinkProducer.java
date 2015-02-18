@@ -1,17 +1,17 @@
 /**
  * 
  */
-package com.comparethemarket.platform.performance.event.sink;
+package ctm.platform.performance.template.eventsink;
 
-import java.io.IOException;
 import java.util.Properties;
 
 import org.apache.kafka.clients.producer.Callback;
 import org.apache.kafka.clients.producer.KafkaProducer;
 import org.apache.kafka.clients.producer.ProducerRecord;
 
-import com.comparethemarket.platform.performance.core.PayloadDelegate;
-import com.comparethemarket.platform.performance.event.sink.payload.ByteArrayPayloadDelegate;
+import ctm.platform.performance.PayloadDelegate;
+import ctm.platform.performance.payload.ByteArrayPayloadDelegate;
+import ctm.platform.performance.payload.UUIDAsTopicNoKeyPayloadDelegate;
 
 /**
  * @author fabiool
@@ -31,11 +31,11 @@ public class EventSinkProducer {
 			return new ByteArrayPayloadDelegate(this.props);
 		}
 		
-//		if ("SingleTopicNoKey".equalsIgnoreCase(this.scenario)) {
-//			
-//			return new SingleTopicNoKeyPayloadDelegate(this.props);
-//		}
-		
+		if ("UUIDAsTopicNoKey".equalsIgnoreCase(this.scenario)) {
+			
+			return new UUIDAsTopicNoKeyPayloadDelegate(this.props);
+		}
+
 		throw new IllegalArgumentException("scenario");
 	}
 	

@@ -10,7 +10,7 @@
  * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the
  * specific language governing permissions and limitations under the License.
  */
-package com.comparethemarket.platform.performance;
+package ctm.platform.performance;
 
 import java.util.Arrays;
 import java.util.Properties;
@@ -19,7 +19,7 @@ import org.apache.kafka.clients.producer.Callback;
 import org.apache.kafka.clients.producer.ProducerConfig;
 import org.apache.kafka.clients.producer.RecordMetadata;
 
-import com.comparethemarket.platform.performance.event.sink.EventSinkProducer;
+import ctm.platform.performance.template.eventsink.EventSinkProducer;
 
 /**
  * Hello world!

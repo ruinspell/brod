@@ -1,16 +1,16 @@
-package com.comparethemarket.platform.performance.event.sink.payload;
+package ctm.platform.performance.payload;
 
 import java.util.Arrays;
 import java.util.Properties;
 
 import org.apache.kafka.clients.producer.ProducerRecord;
-import com.comparethemarket.platform.performance.core.PayloadDelegate;
+
+import ctm.platform.performance.PayloadDelegate;
 
 public class ByteArrayPayloadDelegate extends AbstractPayloadDelegate implements PayloadDelegate {
 	
 	protected final String TOPIC_NAME = "topicName";
 	protected final String RECORD_SIZE = "recordSize";
-	
 	
 	private final String topicName; 
 	final int recordSize; 
@@ -33,9 +33,6 @@ public class ByteArrayPayloadDelegate extends AbstractPayloadDelegate implements
 
 		this.recordSize = 
 				Integer.parseInt((String)this.props.remove(RECORD_SIZE));
-		
-		System.out.println("topicName: " + this.topicName);
-		System.out.println("recordSize: " + this.recordSize);
 	}
 
 	/**

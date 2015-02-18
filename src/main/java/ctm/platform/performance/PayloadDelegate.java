@@ -1,4 +1,4 @@
-package com.comparethemarket.platform.performance.core;
+package ctm.platform.performance;
 
 import org.apache.kafka.clients.producer.ProducerRecord;
 

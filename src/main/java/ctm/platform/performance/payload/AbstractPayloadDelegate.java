@@ -1,10 +1,10 @@
-package com.comparethemarket.platform.performance.event.sink.payload;
+package ctm.platform.performance.payload;
 
 import java.util.Properties;
 
 import org.apache.kafka.clients.producer.ProducerRecord;
 
-import com.comparethemarket.platform.performance.core.PayloadDelegate;
+import ctm.platform.performance.PayloadDelegate;
 
 public abstract class AbstractPayloadDelegate implements PayloadDelegate {
 

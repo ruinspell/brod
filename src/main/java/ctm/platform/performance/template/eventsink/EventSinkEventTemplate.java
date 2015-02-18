@@ -1,10 +1,10 @@
-package com.comparethemarket.platform.performance.event.sink;
+package ctm.platform.performance.template.eventsink;
 
 import java.util.Map;
 import java.util.regex.Pattern;
 
-import com.comparethemarket.platform.performance.core.BaseEventTemplate;
-import com.comparethemarket.platform.performance.core.EventTemplate;
+import ctm.platform.performance.EventTemplate;
+import ctm.platform.performance.template.BaseEventTemplate;
 
 public class EventSinkEventTemplate extends BaseEventTemplate {
 

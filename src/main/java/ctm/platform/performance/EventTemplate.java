@@ -1,4 +1,4 @@
-package com.comparethemarket.platform.performance.core;
+package ctm.platform.performance;
 
 import java.util.Map;
 

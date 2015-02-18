@@ -154,7 +154,7 @@ if [ "x$GC_LOG_ENABLED" = "xtrue" ]; then
   KAFKA_GC_LOG_OPTS="-Xloggc:$LOG_DIR/$GC_LOG_FILE_NAME -verbose:gc -XX:+PrintGCDetails -XX:+PrintGCDateStamps -XX:+PrintGCTimeStamps "
 fi
 
-MAIN_CLASS="com.comparethemarket.platform.performance.Producer"
+MAIN_CLASS="ctm.platform.performance.Producer"
 
 echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 echo "                       JAVA=$JAVA"
