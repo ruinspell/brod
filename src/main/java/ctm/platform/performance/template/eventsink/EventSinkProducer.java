@@ -11,6 +11,7 @@ import org.apache.kafka.clients.producer.ProducerRecord;
 
 import ctm.platform.performance.PayloadDelegate;
 import ctm.platform.performance.payload.ByteArrayPayloadDelegate;
+import ctm.platform.performance.payload.SingleTopicNoKeyPayloadDelegate;
 import ctm.platform.performance.payload.UUIDAsTopicNoKeyPayloadDelegate;
 
 /**
@@ -34,6 +35,11 @@ public class EventSinkProducer {
 		if ("UUIDAsTopicNoKey".equalsIgnoreCase(this.scenario)) {
 			
 			return new UUIDAsTopicNoKeyPayloadDelegate(this.props);
+		}
+
+		if ("SingleTopicNoKey".equalsIgnoreCase(this.scenario)) {
+			
+			return new SingleTopicNoKeyPayloadDelegate(this.props);
 		}
 
 		throw new IllegalArgumentException("scenario");
