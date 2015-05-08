@@ -53,11 +53,11 @@ public class Producer {
         props.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, "org.apache.kafka.common.serialization.ByteArraySerializer");
         props.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, "org.apache.kafka.common.serialization.ByteArraySerializer");
         
-        EventSinkProducer producer = new EventSinkProducer(scenario, props);
+        final EventSinkProducer producer = new EventSinkProducer(scenario, props);
         
         long sleepTime = NS_PER_SEC / throughput;
         long sleepDeficitNs = 0;
-        Stats stats = new Stats(numRecords, 5000);
+        final Stats stats = new Stats(numRecords, 5000);
         long start = System.currentTimeMillis();
 
         for (int i = 0; i < numRecords; i++) {
@@ -87,8 +87,15 @@ public class Producer {
         }
 
         /* print final results */
-        producer.close();
-        stats.printTotal();
+        Runtime.getRuntime().addShutdownHook(new Thread()
+        {
+            @Override
+            public void run()
+            {
+                producer.close();
+                stats.printTotal();
+            }
+        });
     }
 
     private static class Stats {
