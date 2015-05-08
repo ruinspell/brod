@@ -60,6 +60,17 @@ public class Producer {
         final Stats stats = new Stats(numRecords, 5000);
         long start = System.currentTimeMillis();
 
+        /* print final results */
+        Runtime.getRuntime().addShutdownHook(new Thread() {
+            @Override
+            public void run()
+            {
+                System.out.println("I've been here!");
+                producer.close();
+                 stats.printTotal();
+            }
+        });
+
         for (int i = 0; i < numRecords; i++) {
             long sendStart = System.currentTimeMillis();
                         
@@ -86,16 +97,6 @@ public class Producer {
             }
         }
 
-        /* print final results */
-        Runtime.getRuntime().addShutdownHook(new Thread() {
-            @Override
-            public void run()
-            {
-                System.out.println("I've been here!");
-                producer.close();
-                stats.printTotal();
-            }
-        });
     }
 
     private static class Stats {
