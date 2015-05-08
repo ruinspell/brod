@@ -18,5 +18,7 @@ public interface PayloadDelegate {
 	
 	
 	void clearPayload();
+        
+        void dismiss();
 
 }

@@ -72,5 +72,6 @@ public class EventSinkProducer {
 	
 	public void close() {
 		this.producer.close();
+                this.payloadDelegate.dismiss();
 	}
 }

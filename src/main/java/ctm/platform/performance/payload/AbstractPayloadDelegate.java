@@ -37,4 +37,9 @@ public abstract class AbstractPayloadDelegate implements PayloadDelegate {
 	public void clearPayload() {
 		this.payload = null; 
 	}
+
+        @Override
+        public void dismiss() {
+            // no-op
+        }
 }
