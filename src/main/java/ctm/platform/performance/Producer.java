@@ -87,11 +87,11 @@ public class Producer {
         }
 
         /* print final results */
-        Runtime.getRuntime().addShutdownHook(new Thread()
-        {
+        Runtime.getRuntime().addShutdownHook(new Thread() {
             @Override
             public void run()
             {
+                System.out.println("I've been here!");
                 producer.close();
                 stats.printTotal();
             }
