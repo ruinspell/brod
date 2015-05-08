@@ -11,6 +11,7 @@ import org.apache.kafka.clients.producer.ProducerRecord;
 
 import ctm.platform.performance.PayloadDelegate;
 import ctm.platform.performance.payload.ByteArrayPayloadDelegate;
+import ctm.platform.performance.payload.ByteArrayWithKeyPayloadDelegate;
 import ctm.platform.performance.payload.SingleTopicNoKeyPayloadDelegate;
 import ctm.platform.performance.payload.UUIDAsTopicNoKeyPayloadDelegate;
 
@@ -31,7 +32,12 @@ public class EventSinkProducer {
 			
 			return new ByteArrayPayloadDelegate(this.props);
 		}
-		
+                
+		if ("ByteArrayWithKey".equalsIgnoreCase(this.scenario)) {
+			
+			return new ByteArrayWithKeyPayloadDelegate(this.props);
+		}
+        
 		if ("UUIDAsTopicNoKey".equalsIgnoreCase(this.scenario)) {
 			
 			return new UUIDAsTopicNoKeyPayloadDelegate(this.props);
@@ -49,7 +55,7 @@ public class EventSinkProducer {
 		this.scenario = scenario;
 		this.props = props;
 		this.payloadDelegate = getPayloadDelegate();
-		this.producer = new KafkaProducer<byte[], byte[]>(this.props);
+		this.producer = new KafkaProducer<>(this.props);
 	}
 	
 	public byte[] nextPayload() {
